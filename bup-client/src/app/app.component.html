@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" class='nav-bar'>
+  <div>Home</div>
+  <div>
+    <span>Card View</span>
+    <span>Table View</span>
+    <span>Cart</span>
+  </div>
+</mat-toolbar>
+
+<div *ngFor="let student of students">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{student.name}}</mat-card-title>
+        <mat-card-subtitle>{{student.age}}</mat-card-subtitle>
+        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      {{student._id}}
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+<mat-label>id</mat-label>
+<input type="text" #id>
+<hr>
+<mat-label>name</mat-label>
+<input type="text" #name>
+<hr>
+<input type="text" #age>
+<input type="text" #science>
+<input type="text" #math>
+<button mat-raised-button (click)="onSave(id, name, age, science, math)">SAVE</button>
